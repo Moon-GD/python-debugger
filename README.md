@@ -26,10 +26,10 @@
 
 |관계|Class name|설명|
 |:-|:-|:-|
-|부모|Stack Inspector|추적 함수의 실행 스택을 검사|
-||Tracer|추적 함수의 전역/local 변수 들을 저장하고 변화 추이를 저장|
-||Collector|추적 함수 실행 동안에 발생하는 이벤트(line change, function call, function return 등) 기록 <br> 정확히는, 하위 class에서 활용할 수 있는 interface 제공|
-|자식|Coverage Collector|추적 함수가 실행되는 context 정보(현재 실행 중인 함수 이름, 소스 코드 번호, 내부 변수 등)를 기록|
+|부모|<a href="https://github.com/uds-se/debuggingbook/blob/master/notebooks/StackInspector.ipynb">Stack Inspector</a>|추적 함수의 실행 스택을 검사|
+||<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/Tracer.py">Tracer</a>|추적 함수의 전역/local 변수 들을 저장하고 변화 추이를 저장|
+||<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/Collector.py">Collector</a>|추적 함수 실행 동안에 발생하는 이벤트(line change, function call, function return 등) 기록 <br> 정확히는, 하위 class에서 활용할 수 있는 interface 제공|
+|자식|<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/CoverageCollector.py">Coverage Collector</a>|추적 함수가 실행되는 context 정보(현재 실행 중인 함수 이름, 소스 코드 번호, 내부 변수 등)를 기록|
 
 <br>
 
@@ -39,10 +39,10 @@
 
 |관계|Class name|설명|
 |:-|:-|:-|
-|부모|Statistical Debugger|Collector를 활용하여 수집한 정보를 표 형태로 볼 수 있도록 도와줌|
-||Difference Debugger|추적 함수의 문제 발생 여부에 따라 표 형태를 구분할 수 있도록 도와줌|
-||Spectrum Debugger|추적 함수의 어떤 소스 코드에서 문제가 발생했는지 코드 레벨에서 보여줄 수 있도록 interface를 제공해주는 class|
-|자식|Discrete Spectrum Debugger|추적 함수의 소스 코드의 문제 여부를 코드 시각화 및 색깔로 표현해주는 class|
+|부모|<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/StatisticalDebugger.py">Statistical Debugger</a>|Collector를 활용하여 수집한 정보를 표 형태로 볼 수 있도록 도와줌|
+||<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/DifferenceDebugger.py">Difference Debugger</a>|추적 함수의 문제 발생 여부에 따라 표 형태를 구분할 수 있도록 도와줌|
+||<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/SpectrumDebugger.py">Spectrum Debugger</a>|추적 함수의 어떤 소스 코드에서 문제가 발생했는지 코드 레벨에서 보여줄 수 있도록 interface를 제공해주는 class|
+|자식|<a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/DiscreteSpectrumDebugger.py">Discrete Spectrum Debugger</a>|추적 함수의 소스 코드의 문제 여부를 코드 시각화 및 색깔로 표현해주는 class|
 
 <br>
 
@@ -51,7 +51,7 @@
 
 <br>
 
-**추적 관련 class 상속 + 수학 Metric을 활용하여 Tarantula Debugger와 Ochiai Debugger를 생성하는 것이 최종 목표**
+**추적 관련 class 상속 + 수학 Metric을 활용하여 <a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/TarantulaDebugger.py">Tarantula Debugger<a/>와 <a href="https://github.com/Moon-GD/python-debugger/blob/main/debugger%20classes/OchiaiDebugger.py">Ochiai Debugger</a>를 생성하는 것이 최종 목표**
 
 <br><br>
 
