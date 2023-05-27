@@ -6,7 +6,7 @@
 지금까지 각 언어가 크게 Compile, Interpreting의 2가지 방식으로 실행되는 것이 신기했습니다. <br>
 그 중 **이벤트 단위로 변수, 실행 함수 스택의 추적이 흥미로울 것 같아** Python으로 디버깅을 공부하게 되었습니다.
 
-<br>
+<br><br>
 
 ## 2. 잠시 짚고 가자! Compile과 Interpreting의 특징과 장점은?
 #### ① Compile
@@ -19,7 +19,7 @@
 - Runtime에 코드가 읽힘과 동시에 실행!
 - Compile 언어와 다르게 코드 단위로 분리하여 디버깅 하는 게 상대적으로 용이하다
 
-<br>
+<br><br>
 
 ## 3. Class 상속 관계
 #### 추적 함수의 정보를 모으는 classes
@@ -44,12 +44,16 @@
 ||Spectrum Debugger|추적 함수의 어떤 소스 코드에서 문제가 발생했는지 코드 레벨에서 보여줄 수 있도록 interface를 제공해주는 class|
 |자식|Discrete Spectrum Debugger|추적 함수의 소스 코드의 문제 여부를 코드 시각화 및 색깔로 표현해주는 class|
 
+<br>
+
 ##### Discrete Spectrum Debugger 활용 예시
 <img width="817" alt="12345" src="https://github.com/Moon-GD/python-debugger/assets/74173976/16dce9a7-a270-418e-9a91-2b0d7fbd44f2">
 
+<br>
+
 **추적 관련 class 상속 + 수학 Metric을 활용하여 Tarantula Debugger와 Ochiai Debugger를 생성하는 것이 최종 목표**
 
-<br>
+<br><br>
 
 ## 4. 참고 자료
 ##### <a href="https://www.debuggingbook.org/">Debugging Book Organization</a>
