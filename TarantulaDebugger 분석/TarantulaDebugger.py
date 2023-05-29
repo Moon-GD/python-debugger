@@ -632,6 +632,8 @@ class TarantulaDebugger():
         return all_events
     
     # 채도 값을 반환 (0에 가까울 수록 회색, 1에 가까울 수록 원래의 채색)
+    # 얼마나 해당 line이 자주 활용되었는지를 상징
+    # 즉, 밝을 수록해당 line이 success, fail 과의 연관성이 높아짐을 의미
     def brightness(self, event: Any) -> float:
         return max(self.passed_fraction(event), self.failed_fraction(event))
     
@@ -907,13 +909,13 @@ class TarantulaDebugger():
         
         return events
     
-    # 대응되는 event의 의심 정보를 0 ~ 1 사이로 반환
+    # 대응되는 event의 의심 정보를 0 ~ 1 사이로 반환 (human readable)
     def suspiciousness(self, event: Any) -> Optional[float]:
         hue = self.hue(event)
         if hue is None:
             return None
         return 1 - hue
     
-    # 대응되는 event의 의심 정도를 %로 반환
+    # 대응되는 event의 의심 정도를 %로 반환 (human readable)
     def tooltip(self, event: Any) -> str:
         return self.percentage(event)
