@@ -273,13 +273,10 @@ class Collector():
 
         self.collect(frame, event, arg)
         
-# CoverageCollector
-
-#### __init__에 self._coverage 집합 변수 추가
-#### collect 메소드 작성
-#### events 메소드 작성
-#### covered_functions 메소드 추가
-#### coverage 메소드 추가
+    def unknown(self) -> None:  # Placeholder for unknown functions
+        pass
+    
+# Coverage Collector
 class CoverageCollector():
     _generated_function_cache: Dict[Tuple[str, int], Callable] = {}
         
@@ -371,6 +368,7 @@ class CoverageCollector():
     
     # 주어진 frame을 기반으로 함수 객체를 생성하여 반환
     def create_function(self, frame: FrameType) -> Callable:
+        """Create function for given frame"""
         name = frame.f_code.co_name
         cache_key = (name, frame.f_lineno)
         if cache_key in self._generated_function_cache:
@@ -394,7 +392,6 @@ class CoverageCollector():
             generated_function = self.unknown
 
         self._generated_function_cache[cache_key] = generated_function
-        
         return generated_function
     
     def changed_vars(self, new_vars: Dict[str, Any]) -> Dict[str, Any]:
@@ -547,6 +544,9 @@ class CoverageCollector():
 
         self.collect(frame, event, arg)
         
+    def unknown(self) -> None:  # Placeholder for unknown functions
+        pass
+    
 # Tarantula Debugger
 class TarantulaDebugger():
     PASS = 'PASS'
